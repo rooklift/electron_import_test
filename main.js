@@ -10,6 +10,10 @@ electron.app.whenReady().then(() => {
 		width: 1000,
 		height: 600,
 		useContentSize: true,
+		webPreferences: {
+			contextIsolation: false,
+			nodeIntegration: true,
+		},
 	});
 	win.loadFile(path.join(__dirname, "renderer.html"));
 });
